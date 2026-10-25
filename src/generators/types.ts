@@ -21,7 +21,7 @@ export type AnswerSpec =
   /** French numeric answer: accepts 2,5 / 5/2 / ln(3)… within tolerance */
   | { kind: 'number'; value: number; tolerance: number; unit?: string }
   /** expression in one variable, checked at random points */
-  | { kind: 'expr'; expected: string; variable: string; domain: [number, number]; mode?: 'equal' | 'antiderivative' }
+  | { kind: 'expr'; expected: string; variable: string; domain: [number, number]; mode?: 'equal' | 'antiderivative'; integer?: boolean }
   /** limit: a number or ±infinity */
   | { kind: 'limit'; value: number | 'inf' | '-inf' }
   /** several labelled fields, all must be right */
@@ -31,7 +31,7 @@ export type AnswerSpec =
 
 export type FieldSpec = { label: string } & (
   | { kind: 'number'; value: number; tolerance: number }
-  | { kind: 'expr'; expected: string; variable: string; domain: [number, number] }
+  | { kind: 'expr'; expected: string; variable: string; domain: [number, number]; integer?: boolean }
   | { kind: 'mod'; value: number; modulus: number }
 );
 

@@ -15,4 +15,5 @@ export const SUBJECT_TOOLS: SubjectTool[] = [
   { subject: 'sat', to: '/sat/spr', icon: '⌨️', label: 'SPR trainer', desc: 'Typed answers only' },
   { subject: 'sat', to: '/sat/mock', icon: '⏱️', label: 'Mock test', desc: '2 adaptive modules' },
   { subject: 'sat', to: '/sat/qb', icon: '📄', label: 'Question Bank tracker', desc: 'Your PDF questions' },
+  { subject: 'maths', to: '/maths/recurrence', icon: '🪜', label: 'Récurrence', desc: 'Remettre dans l’ordre, compléter, rédiger' },
 ];

@@ -294,6 +294,8 @@ export interface EquivOptions {
   samples?: number;
   /** deterministic sample seed */
   seed?: number;
+  /** sample integers only (sequences in n) */
+  integer?: boolean;
 }
 
 /**
@@ -303,8 +305,19 @@ export interface EquivOptions {
 export function equivalentFn(
   f: (x: number) => number,
   g: (x: number) => number,
-  { domain = [-3, 3], samples = 12, seed = 12345 }: EquivOptions = {},
+  { domain = [-3, 3], samples = 12, seed = 12345, integer = false }: EquivOptions = {},
 ): boolean {
+  if (integer) {
+    let good = 0;
+    for (let x = Math.ceil(domain[0]); x <= Math.floor(domain[1]); x++) {
+      const a = f(x);
+      const b = g(x);
+      if (!Number.isFinite(a) && !Number.isFinite(b)) continue;
+      if (!close(a, b, 1e-6, 1e-8)) return false;
+      good++;
+    }
+    return good >= 3;
+  }
   let s = seed >>> 0;
   const rnd = () => {
     s = (Math.imul(s, 1664525) + 1013904223) >>> 0;

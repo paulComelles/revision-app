@@ -320,7 +320,7 @@ export function AnswerInput({
               value={inputs[i] ?? ''}
               disabled={disabled}
               aria-label={f.label}
-              placeholder={matrix ? f.label.replace(/\$/g, '') : ''}
+              placeholder={matrix ? f.label.replace(/[$_{}']/g, '') : ''}
               inputMode="text"
               autoComplete="off"
               onChange={(e) => set(i, e.target.value)}

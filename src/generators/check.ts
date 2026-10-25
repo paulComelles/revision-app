@@ -27,7 +27,7 @@ function checkField(f: FieldSpec, input: string): CheckResult {
     case 'number':
       return numberWithin(input, f.value, f.tolerance);
     case 'expr':
-      return checkExpression(input, f.expected, { variable: f.variable, domain: f.domain });
+      return checkExpression(input, f.expected, { variable: f.variable, domain: f.domain, integer: f.integer });
     case 'mod': {
       const v = parseNumberFr(input);
       if (!Number.isInteger(v)) return { valid: false, correct: false, message: 'Entier attendu.' };
@@ -66,7 +66,7 @@ export function checkAnswer(spec: AnswerSpec, inputs: string[]): CheckResult {
       return numberWithin(inputs[0] ?? '', spec.value, spec.tolerance);
     case 'expr':
       if (spec.mode === 'antiderivative') return checkAntiderivative(inputs[0] ?? '', spec.expected, spec.variable, spec.domain);
-      return checkExpression(inputs[0] ?? '', spec.expected, { variable: spec.variable, domain: spec.domain });
+      return checkExpression(inputs[0] ?? '', spec.expected, { variable: spec.variable, domain: spec.domain, integer: spec.integer });
     case 'limit': {
       const s = (inputs[0] ?? '').trim().replace(/\s/g, '').replace(/[−–]/g, '-');
       if (s === '') return { valid: false, correct: false, message: 'Réponse vide.' };

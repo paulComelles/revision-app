@@ -42,3 +42,11 @@ Choix faits en autonomie (modifiables). Les plus récents en bas.
 - Distracteurs QCM construits à partir d’erreurs typiques (signe, formule voisine, mauvaise lecture) et étiquetés avec un type d’erreur, qui pré-remplit le carnet d’erreurs.
 - Question Bank : une question marquée fausse crée une erreur (carnet + répétition espacée). Sa révision = la refaire depuis le PDF puis dire juste/faux, ce qui met à jour l’historique de la question.
 - Test blanc : les questions du test ne mettent pas à jour la répétition espacée des compétences (pour ne pas fausser le planning), mais sont comptées dans les statistiques et les erreurs vont dans le carnet.
+
+## Maths (bac)
+- Réponses « expression » vérifiées en évaluant en 12 points aléatoires (ou en tous les entiers d’un intervalle pour les suites en $n$). Un aperçu « Lu comme » montre comment l’expression tapée a été comprise (ex. `e^2x` = $e^2 \cdot x$ : écrire `e^(2x)`).
+- Primitives : n’importe quelle primitive est acceptée (on vérifie que la différence avec la primitive attendue est constante).
+- Réponses numériques approchées : tolérance indiquée dans l’énoncé (ex. $10^{-2}$ pour le TVI, $10^{-3}$ pour la loi binomiale).
+- Plusieurs réponses valides (Bézout, inverse modulaire, argument modulo $2\pi$) : vérificateur sur mesure qui accepte toute solution correcte.
+- Récurrence : 8 modèles (sommes, somme géométrique, divisibilité, suite explicite, suite majorée, inégalité de Bernoulli). Les preuves sont générées avec ta structure Initialisation / Hérédité / En effet / Conclusion ; le mode « compléter » est aussi un générateur (il revient en révision). Le mode « rédiger » se termine par une check-list et une auto-évaluation.
+- Chapitres sans générateur (fonctions trigonométriques, sommes de VA) : présents dans la liste, révisés via tes cartes / points clés importés.
