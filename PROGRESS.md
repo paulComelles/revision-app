@@ -11,8 +11,15 @@
 
 - **Phase 5** : blurting (minuteur, comparaison avec la liste de points clés, pré-cochage par mots-clés à confirmer, note FSRS) ; philo : carte des 17 notions (réseau des liens importés, couleur = rappel), fiche notion (cours, références, notions liées, sujets, révision active), dissertation (définitions, problématique, plan en 3 parties + check-list), explication de texte ; HG : chronologie (remettre dans l’ordre, placer sur la frise), cartes notions, plan ; révisions dédiées pour notions, listes de points clés et chronologies.
 
+- **Phase 6** : QA — tous les écrans vérifiés à 360 px en sombre et en clair (aucun débordement ni erreur console), parcours complets testés au navigateur (import → session du jour → résumé, mode trajet, SAT, EC1, RDD, philo, HG, blurting), hors-ligne vérifié (service worker), tests des générateurs passés sur 500 graines, corrections (probabilités binomiales trop petites, temps d’étude sous-compté, axes des graphes), README, rappel de sauvegarde ; **bonus** grand oral (phases chronométrées « à vérifier », questions, enregistrement audio local).
+
 ## En cours
-- Phase 6 : QA + README (+ grand oral en bonus).
+- Rien : toutes les phases sont faites.
+
+## Idées pour la suite
+- Niveau « Easy » SAT pour un test blanc plus réaliste.
+- Générateurs pour les chapitres « fonctions sinus/cosinus » et « sommes de variables aléatoires ».
+- Glisser-déposer au doigt dans le RDD (actuellement boutons 1 / 2 / 3).
 
 ## Pour reprendre
 - `npm ci && npm run check` (typecheck + lint + tests), `npm run dev`.

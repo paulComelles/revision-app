@@ -72,7 +72,7 @@ export function LineChart({
           </g>
         ))}
         {points.map((p, i) => (
-          <text key={i} x={x(i)} y={H - 6} fontSize={9} textAnchor="middle" fill="currentColor">
+          <text key={i} x={x(i)} y={H - 6} fontSize={9} textAnchor={i === points.length - 1 ? 'end' : i === 0 ? 'start' : 'middle'} fill="currentColor">
             {i % Math.ceil(points.length / 6) === 0 || i === points.length - 1 ? p.label : ''}
           </text>
         ))}

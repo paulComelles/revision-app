@@ -10,6 +10,7 @@ import { RddPage } from './features/ses/Rdd';
 import { BlurtingPage } from './features/blurting/Blurting';
 import { DissertationPage, ExplicationPage, NotionPage, PhiloHome } from './features/philo/Philo';
 import { ChronoPage, HgHome, HgPlanPage } from './features/hg/Hg';
+import { GrandOralPage } from './features/grandoral/GrandOral';
 
 /** Routes contributed by subject modules (SAT, maths, SES, philo, HG). */
 export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
@@ -31,4 +32,5 @@ export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
   { path: '/hg', element: <HgHome /> },
   { path: '/hg/chrono', element: <ChronoPage /> },
   { path: '/hg/plan', element: <HgPlanPage /> },
+  { path: '/grand-oral', element: <GrandOralPage /> },
 ];

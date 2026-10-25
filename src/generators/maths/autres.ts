@@ -98,8 +98,14 @@ export const binomiale = defineGenerator({
     const n = rng.int(5, 12);
     const p = rng.pick([0.1, 0.2, 0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.75, 0.8]);
     const kind = d === 'easy' ? rng.pick(['esp', 'eq'] as const) : d === 'medium' ? rng.pick(['le', 'atleast1'] as const) : rng.pick(['ge', 'var'] as const);
-    const k = rng.int(1, n - 1);
     const pk = (j: number) => binom(n, j) * p ** j * (1 - p) ** (n - j);
+    const cdf = (j: number) => Array.from({ length: j + 1 }, (_, i) => pk(i)).reduce((a, b) => a + b, 0);
+    // choose k so that the asked probability is meaningful (not ~0 or ~1)
+    const candidates = Array.from({ length: n - 1 }, (_, i) => i + 1).filter((j) => {
+      const v = kind === 'eq' ? pk(j) : kind === 'le' ? cdf(j) : 1 - cdf(j - 1);
+      return v > 0.01 && v < 0.99;
+    });
+    const k = candidates.length ? rng.pick(candidates) : Math.round(n * p) || 1;
     let value: number;
     let ask: string;
     let steps: string[];

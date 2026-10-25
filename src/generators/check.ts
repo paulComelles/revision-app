@@ -101,6 +101,11 @@ export function checkQuestion(q: Question, inputs: string[]): CheckResult {
   return checkAnswer(q.answer, inputs);
 }
 
+/** Number as a perfect student would type it (never in exponent notation). */
+function plainNumber(v: number): string {
+  return Number.isInteger(v) ? String(v) : v.toFixed(12).replace(/\.?0+$/, '');
+}
+
 /** Inputs that a perfect student would type (used by tests to prove each question is solvable). */
 export function canonicalInputs(q: Question): string[] {
   const a = q.answer;
@@ -110,13 +115,13 @@ export function canonicalInputs(q: Question): string[] {
     case 'spr':
       return [sprAcceptedForms(a.values[0])[0] ?? ''];
     case 'number':
-      return [String(a.value)];
+      return [plainNumber(a.value)];
     case 'expr':
       return [a.expected];
     case 'limit':
       return [a.value === 'inf' ? '+inf' : a.value === '-inf' ? '-inf' : String(a.value)];
     case 'fields':
-      return a.fields.map((f) => (f.kind === 'expr' ? f.expected : String(f.value)));
+      return a.fields.map((f) => (f.kind === 'expr' ? f.expected : plainNumber(f.value)));
     case 'custom':
       return (q.meta.canonical as string[]) ?? [];
   }

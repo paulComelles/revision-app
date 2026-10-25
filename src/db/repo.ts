@@ -153,7 +153,8 @@ export async function deleteMistake(id: string): Promise<void> {
 }
 
 export async function logFocus(subject: SubjectId, start: number, end: number, kind: 'focus' | 'session' | 'trajet' | 'mock' | 'drill', label?: string) {
-  const minutes = Math.round(((end - start) / 60000) * 10) / 10;
-  if (minutes < 0.5) return;
+  const minutes = Math.round(((end - start) / 60000) * 100) / 100;
+  // ignore accidental taps, keep short card reviews
+  if (end - start < 5000) return;
   await db.focus.add({ subject, start, end, minutes, kind, label });
 }

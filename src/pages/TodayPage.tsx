@@ -12,7 +12,7 @@ import type { SessionTask } from '../lib/planner';
 
 function taskLabel(t: SessionTask): string {
   if (t.kind === 'review') return t.title;
-  if (t.kind === 'timed') return `⏱️ ${t.title} (${Math.round(t.timeLimitSec / 60)} min)`;
+  if (t.kind === 'timed') return `⏱️ ${t.title} (${t.timeLimitSec < 120 ? `${t.timeLimitSec} s` : `${Math.round(t.timeLimitSec / 60)} min`})`;
   return t.title;
 }
 
@@ -135,6 +135,12 @@ export function TodayPage() {
           {data ? `${data.due.length} élément(s) à réviser aujourd’hui` : ''} · objectif {settings.dailyGoalMinutes} min/jour
         </div>
       </Card>
+
+      {data && data.attempts.length > 20 && (!settings.lastBackupAt || Date.now() - settings.lastBackupAt > 7 * 86_400_000) && (
+        <Banner tone="warn">
+          Pense à exporter une sauvegarde (Réglages → Sauvegarde) : tes données ne vivent que dans ce navigateur.
+        </Banner>
+      )}
 
       {settings.examDates.length === 0 && (
         <Banner>

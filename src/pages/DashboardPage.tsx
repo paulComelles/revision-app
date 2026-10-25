@@ -179,7 +179,7 @@ export function DashboardPage() {
           </div>
           <div>
             <div className="mb-1 text-xs text-slate-500">Temps moyen par question (s)</div>
-            <LineChart points={derived.speed} />
+            <LineChart points={derived.speed} format={(v) => (v < 10 ? v.toFixed(1).replace('.', ',') : String(Math.round(v)))} />
           </div>
         </div>
       </Card>
