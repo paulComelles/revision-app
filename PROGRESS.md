@@ -7,11 +7,13 @@
 
 - **Phase 3** : maths spé (dérivation/convexité ×4, suites ×2, limites, TVI, exp/ln ×2, primitives, intégrales, équations différentielles, espace, loi binomiale, dénombrement) et expertes (produit/puissance/inverse de matrices, graphes et nombre de chemins, Markov, PGCD, Bézout, congruences/inverse modulaire, complexes ×3) — 27 générateurs vérifiés (dérivées numériques, Simpson, énumération exhaustive, force brute, substitution) ; constructeur de récurrence (ordre / trous / rédaction + auto-vérification).
 
+- **Phase 4** : SES — suivi des 12 chapitres (cases « au bac » éditables), entraîneur EC1 sur tes fiches (reconstruire, compléter les trous, « quel argument pour quel sujet ? »), plans EC1 en répétition espacée, calculs EC2 générés sur données fictives (taux de variation, CM, indices, parts, points de %, TVAM, rédaction d’une phrase) avec tests, RDD (brouillon chronométré, idées → 3 paragraphes, intro/conclusion, auto-évaluation).
+
 ## En cours
-- Phase 4 : SES.
+- Phase 5 : philo, HG, blurting.
 
 ## Ensuite
-- Phase 5 : philo, HG, blurting. Phase 6 : QA + README (+ grand oral en bonus).
+- Phase 6 : QA + README (+ grand oral en bonus).
 
 ## Pour reprendre
 - `npm ci && npm run check` (typecheck + lint + tests), `npm run dev`.

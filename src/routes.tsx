@@ -4,6 +4,9 @@ import { SatPractice } from './features/sat/SatPractice';
 import { SatMock } from './features/sat/SatMock';
 import { QbTracker } from './features/sat/QbTracker';
 import { RecurrencePage } from './features/maths/RecurrencePage';
+import { SesCalcPage, SesHome } from './features/ses/SesHome';
+import { Ec1Page } from './features/ses/Ec1';
+import { RddPage } from './features/ses/Rdd';
 
 /** Routes contributed by subject modules (SAT, maths, SES, philo, HG). */
 export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
@@ -13,4 +16,8 @@ export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
   { path: '/sat/mock', element: <SatMock /> },
   { path: '/sat/qb', element: <QbTracker /> },
   { path: '/maths/recurrence', element: <RecurrencePage /> },
+  { path: '/ses', element: <SesHome /> },
+  { path: '/ses/ec1', element: <Ec1Page /> },
+  { path: '/ses/ec2', element: <SesCalcPage /> },
+  { path: '/ses/rdd', element: <RddPage /> },
 ];

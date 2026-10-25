@@ -9,6 +9,7 @@ import { Badge, Card, PageTitle } from '../components/ui';
 import { groupStats, masteryColor } from '../lib/mastery';
 import { EXTRA_SKILLS } from '../catalog';
 import { SatHome } from '../features/sat/SatHome';
+import { SesHome } from '../features/ses/SesHome';
 
 const STATUS_LABEL = { todo: 'pas commencé', current: 'en cours', done: 'vu' } as const;
 
@@ -44,6 +45,7 @@ export function SubjectPage() {
   const dark = document.documentElement.classList.contains('dark');
   if (!SUBJECTS[s]) return <p>Matière inconnue.</p>;
   if (s === 'sat') return <SatHome />;
+  if (s === 'ses') return <SesHome />;
   const tools = SUBJECT_TOOLS.filter((t) => t.subject === s);
   const gens = GENERATORS.filter((g) => g.subject === s);
   const extra = Object.entries(EXTRA_SKILLS).filter(([, v]) => v.subject === s);

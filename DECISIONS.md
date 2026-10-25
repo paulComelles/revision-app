@@ -50,3 +50,8 @@ Choix faits en autonomie (modifiables). Les plus récents en bas.
 - Plusieurs réponses valides (Bézout, inverse modulaire, argument modulo $2\pi$) : vérificateur sur mesure qui accepte toute solution correcte.
 - Récurrence : 8 modèles (sommes, somme géométrique, divisibilité, suite explicite, suite majorée, inégalité de Bernoulli). Les preuves sont générées avec ta structure Initialisation / Hérédité / En effet / Conclusion ; le mode « compléter » est aussi un générateur (il revient en révision). Le mode « rédiger » se termine par une check-list et une auto-évaluation.
 - Chapitres sans générateur (fonctions trigonométriques, sommes de VA) : présents dans la liste, révisés via tes cartes / points clés importés.
+
+## SES
+- « Glisser les idées dans 3 paragraphes » (RDD) est fait par des boutons 1 / 2 / 3 plutôt qu’un vrai glisser-déposer : plus fiable au doigt sur téléphone. Le brouillon est sauvegardé localement en continu.
+- EC1 : la comparaison avec ta fiche est une auto-évaluation partie par partie (✓ / ✗) ; la note FSRS est calculée à partir de la proportion retrouvée. Pas de correction automatique de texte libre (trop peu fiable).
+- Calculs EC2 : réponses arrondies avec tolérance d’une demi-unité du dernier chiffre demandé ; virgule française acceptée.

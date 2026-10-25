@@ -1,2 +1,4 @@
 import type { Generator } from '../types';
-export const SES_GENERATORS: Generator[] = [];
+import { SES_CALC_GENERATORS } from './calculs';
+
+export const SES_GENERATORS: Generator[] = [...SES_CALC_GENERATORS];

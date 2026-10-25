@@ -6,6 +6,7 @@ import 'katex/dist/katex.min.css';
 import './index.css';
 import { App } from './App';
 import { ensureSeeded } from './db/repo';
+import './features/review/renderers';
 
 registerSW({ immediate: true });
 
