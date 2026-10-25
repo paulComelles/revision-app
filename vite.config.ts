@@ -53,5 +53,7 @@ export default defineConfig({
   test: {
     environment: 'node',
     include: ['src/**/*.test.ts', 'src/**/*.test.tsx'],
+    // generator tests run many seeds; CI runners are slower than a laptop
+    testTimeout: 30_000,
   },
 });

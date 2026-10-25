@@ -105,10 +105,12 @@ describe('analyse — vérifications indépendantes', () => {
   it('integrals: Simpson rule', () => {
     forAll(integrale, N, (q) => {
       const m = q.meta as { a: number; b: number; f: string; val: number };
+      const f = compile(m.f);
+      const fx = (x: number) => f.evaluate({ x });
       const n = 2000;
       const h = (m.b - m.a) / n;
-      let s = ev(m.f, { x: m.a }) + ev(m.f, { x: m.b });
-      for (let i = 1; i < n; i++) s += (i % 2 ? 4 : 2) * ev(m.f, { x: m.a + i * h });
+      let s = fx(m.a) + fx(m.b);
+      for (let i = 1; i < n; i++) s += (i % 2 ? 4 : 2) * fx(m.a + i * h);
       expect(Math.abs((s * h) / 3 - m.val)).toBeLessThan(1e-7);
     });
   });
