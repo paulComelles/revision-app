@@ -1,6 +1,6 @@
 import type { SubjectId } from './types';
 
-/** Tools shown on each subject page (contributed by modules). */
+/** Tools shown on each subject page. */
 export interface SubjectTool {
   subject: SubjectId;
   to: string;
@@ -9,8 +9,10 @@ export interface SubjectTool {
   icon: string;
 }
 
-export const SUBJECT_TOOLS: SubjectTool[] = [];
-
-export function registerTools(...tools: SubjectTool[]) {
-  SUBJECT_TOOLS.push(...tools);
-}
+export const SUBJECT_TOOLS: SubjectTool[] = [
+  { subject: 'sat', to: '/sat', icon: '🧭', label: 'SAT dashboard', desc: 'Skills from the College Board Question Bank' },
+  { subject: 'sat', to: '/sat/practice', icon: '🎯', label: 'Adaptive practice', desc: 'Weighted to your weak skills' },
+  { subject: 'sat', to: '/sat/spr', icon: '⌨️', label: 'SPR trainer', desc: 'Typed answers only' },
+  { subject: 'sat', to: '/sat/mock', icon: '⏱️', label: 'Mock test', desc: '2 adaptive modules' },
+  { subject: 'sat', to: '/sat/qb', icon: '📄', label: 'Question Bank tracker', desc: 'Your PDF questions' },
+];

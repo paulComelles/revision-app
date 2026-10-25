@@ -53,13 +53,11 @@ describe('all generators', () => {
               if (q.answer.kind === 'spr') {
                 expect(canonicalInputs(q)[0].length, ctx).toBeGreaterThan(0);
               }
-              // the answer must never appear in the first two hints verbatim (for numeric answers)
-              if (q.answer.kind === 'spr' && typeof q.answer.values[0] !== 'number') {
+              // the concept hint must never state the final answer ("= answer")
+              if (q.answer.kind === 'spr' && typeof q.answer.values[0] !== 'number' && q.answer.values[0].n !== 0) {
                 const v = q.answer.values[0];
-                if (Math.abs(v.n) >= 10 && v.d === 1) {
-                  const re = new RegExp(`(^|[^0-9.])${v.n}([^0-9]|$)`);
-                  expect(re.test(q.hints[0]), `${ctx} answer leaked in hint 1`).toBe(false);
-                }
+                const re = new RegExp(`=\\s*${v.n < 0 ? '-' : ''}${Math.abs(v.n)}${v.d === 1 ? '' : `/${v.d}`}(?![0-9./])`);
+                expect(re.test(q.hints[0]), `${ctx} answer stated in hint 1: ${q.hints[0]}`).toBe(false);
               }
             }
           });

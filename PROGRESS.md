@@ -3,11 +3,13 @@
 ## Fait
 - **Phase 1** : scaffold, données (Dexie), FSRS, page Aujourd’hui + mode trajet, carnet d’erreurs (auto + manuel avec photo), focus (Pomodoro), tableau de bord, réglages (examens, chapitres, poids, jours), import de contenu (YAML/JSON + validation), sauvegarde/restauration JSON, PWA, workflow GitHub Pages.
 
+- **Phase 2** : module SAT — 37 générateurs répartis sur les 19 compétences du Question Bank (Medium/Hard, QCM + SPR), tests de vérification indépendants par domaine (substitution, intégration numérique, comptage, figures vérifiées), utilitaire SPR testé (règles officielles), indices progressifs, entraînement adaptatif, SPR trainer (+ exercice sur les règles de saisie), test blanc adaptatif 2×22 (config `src/generators/sat/mockConfig.ts`), tracker Question Bank (ajout unitaire / en masse, stats par compétence, ré-essais programmés).
+
 ## En cours
-- Phase 2 : module SAT.
+- Phase 3 : maths spé + expertes.
 
 ## Ensuite
-- Phase 3 : maths spé + expertes. Phase 4 : SES. Phase 5 : philo, HG, blurting. Phase 6 : QA + README (+ grand oral en bonus).
+- Phase 4 : SES. Phase 5 : philo, HG, blurting. Phase 6 : QA + README (+ grand oral en bonus).
 
 ## Pour reprendre
 - `npm ci && npm run check` (typecheck + lint + tests), `npm run dev`.

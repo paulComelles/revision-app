@@ -33,3 +33,12 @@ Choix faits en autonomie (modifiables). Les plus récents en bas.
 - Chapitres pré-remplis depuis la structure des programmes officiels, tous marqués « à vérifier » et modifiables. Aucun contenu de cours.
 - SES : les 9 chapitres « au bac » ne sont **pas** pré-cochés (je ne veux pas risquer une information fausse) : à cocher dans Réglages → Chapitres.
 - Les dates d’examen ne sont pas pré-remplies.
+
+## SAT
+- Taxonomie = les 19 compétences du College Board Question Bank (`src/generators/sat/skills.ts`), pondération des points faibles (géométrie/trigo, systèmes, Advanced Math, PSDA) dans le même fichier.
+- Pas de niveau « Easy » généré (demandé : Medium et Hard). Le test blanc n’a donc que Medium/Hard ; le module 2 « plus facile » est surtout Medium.
+- Score du test blanc : simple fonction affine du nombre de bonnes réponses selon le module 2 (paramètres dans `mockConfig.ts`), affichée comme une fourchette « estimation ». Le vrai SAT utilise un modèle IRT non public.
+- Règles SPR : une fraction doit être entier/entier (pas `1.5/2`), un `+` initial et les espaces sont refusés, un décimal non exact doit remplir les 5 (ou 6 avec `-`) caractères. Les fractions non réduites (`4/6`) sont acceptées.
+- Distracteurs QCM construits à partir d’erreurs typiques (signe, formule voisine, mauvaise lecture) et étiquetés avec un type d’erreur, qui pré-remplit le carnet d’erreurs.
+- Question Bank : une question marquée fausse crée une erreur (carnet + répétition espacée). Sa révision = la refaire depuis le PDF puis dire juste/faux, ce qui met à jour l’historique de la question.
+- Test blanc : les questions du test ne mettent pas à jour la répétition espacée des compétences (pour ne pas fausser le planning), mais sont comptées dans les statistiques et les erreurs vont dans le carnet.

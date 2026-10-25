@@ -150,7 +150,7 @@ export function QuestionView({ question: q, onComplete, timeLimitSec, noHints, c
 
       <AnswerInput q={q} inputs={inputs} setInputs={setInputs} disabled={!!result} result={result} onEnter={submit} />
 
-      {message && <p className="text-sm text-amber-600 dark:text-amber-400">{message}</p>}
+      {message && !(q.answer.kind === 'spr' && (inputs[0] ?? '').trim()) && <p className="text-sm text-amber-600 dark:text-amber-400">{message}</p>}
 
       {!result && (
         <div className="flex flex-wrap gap-2">

@@ -8,6 +8,7 @@ import { SUBJECT_TOOLS } from '../tools';
 import { Badge, Card, PageTitle } from '../components/ui';
 import { groupStats, masteryColor } from '../lib/mastery';
 import { EXTRA_SKILLS } from '../catalog';
+import { SatHome } from '../features/sat/SatHome';
 
 const STATUS_LABEL = { todo: 'pas commencé', current: 'en cours', done: 'vu' } as const;
 
@@ -42,6 +43,7 @@ export function SubjectPage() {
   const cardCount = useLiveQuery(() => db.content.where({ type: 'card', subject: s }).count(), [s]) ?? 0;
   const dark = document.documentElement.classList.contains('dark');
   if (!SUBJECTS[s]) return <p>Matière inconnue.</p>;
+  if (s === 'sat') return <SatHome />;
   const tools = SUBJECT_TOOLS.filter((t) => t.subject === s);
   const gens = GENERATORS.filter((g) => g.subject === s);
   const extra = Object.entries(EXTRA_SKILLS).filter(([, v]) => v.subject === s);
@@ -63,13 +65,10 @@ export function SubjectPage() {
           ))}
         </div>
       )}
-      {s !== 'sat' && (
-        <Link to={`/cartes/${s}`} className="block rounded-xl border border-slate-200 bg-white p-3 text-sm dark:border-slate-800 dark:bg-slate-900">
-          🃏 Cartes de la matière · {cardCount}
-        </Link>
-      )}
-      {s !== 'sat' &&
-        chapters.map((c) => {
+      <Link to={`/cartes/${s}`} className="block rounded-xl border border-slate-200 bg-white p-3 text-sm dark:border-slate-800 dark:bg-slate-900">
+        🃏 Cartes de la matière · {cardCount}
+      </Link>
+      {chapters.map((c) => {
           const cg = gens.filter((g) => g.skill === c.id);
           return (
             <Card key={c.id} className="p-3">

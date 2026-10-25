@@ -106,7 +106,7 @@ function MistakeRow({ m }: { m: Mistake }) {
         <Badge color={SUBJECTS[m.subject].color}>{SUBJECTS[m.subject].short}</Badge>
         <div className="min-w-0 flex-1">
           <div className="text-sm font-medium">
-            {g?.title ?? (m.qbId ? `Question Bank ${m.qbId}` : 'Erreur notée')}
+            {g?.title ?? (m.qbId ? 'College Board Question Bank' : 'Erreur notée')}
             {m.resolved && <span className="ml-2 text-xs text-emerald-600">✓ résolue</span>}
           </div>
           <div className="text-xs text-slate-500">

@@ -12,6 +12,7 @@ import { ExerciseRunner } from './ExerciseRunner';
 import { REVIEW_RENDERERS, type ReviewProps } from './registry';
 import type { Grade4 } from '../../lib/srs';
 import { PhotoView } from '../../components/PhotoView';
+import { recordQbReattempt } from '../sat/qbRepo';
 
 export function ReviewRunner(props: ReviewProps) {
   const { item } = props;
@@ -109,6 +110,26 @@ function MistakeReview({ item, onDone, compact }: ReviewProps) {
         label={exact ? 'Erreur — question exacte' : 'Erreur — question similaire'}
         onDone={(o) => onDone(o.correct)}
       />
+    );
+  }
+  if (mistake.qbId) {
+    const qbId = mistake.qbId;
+    return (
+      <div className="space-y-3">
+        <div className="flex items-center gap-2 text-xs text-slate-500">
+          <Badge color={SUBJECTS.sat.color}>SAT</Badge> Question Bank re-attempt · {ERROR_TYPES[mistake.errorType].en}
+        </div>
+        <Md text={mistake.prompt} />
+        <p className="text-sm">Solve it again on paper, then check the answer in your PDF.</p>
+        <div className="flex gap-2">
+          <Button variant="success" onClick={async () => { await recordQbReattempt(qbId, mistake.id, true); onDone(true); }}>
+            ✓ Right
+          </Button>
+          <Button variant="danger" onClick={async () => { await recordQbReattempt(qbId, mistake.id, false); onDone(false); }}>
+            ✗ Wrong
+          </Button>
+        </div>
+      </div>
     );
   }
   // manual mistake: redo on paper, then self-grade
