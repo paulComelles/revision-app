@@ -7,6 +7,9 @@ import { RecurrencePage } from './features/maths/RecurrencePage';
 import { SesCalcPage, SesHome } from './features/ses/SesHome';
 import { Ec1Page } from './features/ses/Ec1';
 import { RddPage } from './features/ses/Rdd';
+import { BlurtingPage } from './features/blurting/Blurting';
+import { DissertationPage, ExplicationPage, NotionPage, PhiloHome } from './features/philo/Philo';
+import { ChronoPage, HgHome, HgPlanPage } from './features/hg/Hg';
 
 /** Routes contributed by subject modules (SAT, maths, SES, philo, HG). */
 export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
@@ -20,4 +23,12 @@ export const EXTRA_ROUTES: { path: string; element: ReactElement }[] = [
   { path: '/ses/ec1', element: <Ec1Page /> },
   { path: '/ses/ec2', element: <SesCalcPage /> },
   { path: '/ses/rdd', element: <RddPage /> },
+  { path: '/blurting', element: <BlurtingPage /> },
+  { path: '/philo', element: <PhiloHome /> },
+  { path: '/philo/notion/:id', element: <NotionPage /> },
+  { path: '/philo/dissertation', element: <DissertationPage /> },
+  { path: '/philo/explication', element: <ExplicationPage /> },
+  { path: '/hg', element: <HgHome /> },
+  { path: '/hg/chrono', element: <ChronoPage /> },
+  { path: '/hg/plan', element: <HgPlanPage /> },
 ];

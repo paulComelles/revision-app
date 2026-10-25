@@ -9,10 +9,9 @@
 
 - **Phase 4** : SES — suivi des 12 chapitres (cases « au bac » éditables), entraîneur EC1 sur tes fiches (reconstruire, compléter les trous, « quel argument pour quel sujet ? »), plans EC1 en répétition espacée, calculs EC2 générés sur données fictives (taux de variation, CM, indices, parts, points de %, TVAM, rédaction d’une phrase) avec tests, RDD (brouillon chronométré, idées → 3 paragraphes, intro/conclusion, auto-évaluation).
 
-## En cours
-- Phase 5 : philo, HG, blurting.
+- **Phase 5** : blurting (minuteur, comparaison avec la liste de points clés, pré-cochage par mots-clés à confirmer, note FSRS) ; philo : carte des 17 notions (réseau des liens importés, couleur = rappel), fiche notion (cours, références, notions liées, sujets, révision active), dissertation (définitions, problématique, plan en 3 parties + check-list), explication de texte ; HG : chronologie (remettre dans l’ordre, placer sur la frise), cartes notions, plan ; révisions dédiées pour notions, listes de points clés et chronologies.
 
-## Ensuite
+## En cours
 - Phase 6 : QA + README (+ grand oral en bonus).
 
 ## Pour reprendre

@@ -55,3 +55,9 @@ Choix faits en autonomie (modifiables). Les plus récents en bas.
 - « Glisser les idées dans 3 paragraphes » (RDD) est fait par des boutons 1 / 2 / 3 plutôt qu’un vrai glisser-déposer : plus fiable au doigt sur téléphone. Le brouillon est sauvegardé localement en continu.
 - EC1 : la comparaison avec ta fiche est une auto-évaluation partie par partie (✓ / ✗) ; la note FSRS est calculée à partir de la proportion retrouvée. Pas de correction automatique de texte libre (trop peu fiable).
 - Calculs EC2 : réponses arrondies avec tolérance d’une demi-unité du dernier chiffre demandé ; virgule française acceptée.
+
+## Philo, HG, blurting
+- Blurting : les points « retrouvés » sont pré-cochés par recherche de mots-clés (sans accents, pluriels simplifiés) mais c’est toi qui valides ; la note FSRS vient de la proportion retrouvée (≥ 90 % facile, ≥ 65 % bien, ≥ 35 % difficile).
+- La révision d’une notion de philo = écrire de mémoire (repères, références, liens) puis comparer avec ton cours importé et s’auto-évaluer.
+- Les check-lists de dissertation / explication / plan HG portent uniquement sur la méthode (pas de contenu de cours).
+- Chronologie « placer sur la frise » : on demande l’année ; la réponse est juste si l’année est exacte. Une frise est ensuite dessinée avec tes événements.
